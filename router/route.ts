@@ -42,12 +42,12 @@ router.delete('/customer/:id', (req, res) => {
     res.send(customer);
 });
 router.post('/customer/signup', (req, res) => {
-    const pass = bcryptjs.hashSync(req.body.password, 10);
+    const hasedPass = bcryptjs.hashSync(req.body.password, 10);
     const customer = {
         id: customers.length + 1,
         name: req.body.name,
         age: req.body.age,
-        password: pass
+        password: hasedPass
     };
     customers.push(customer);
     res.send(customer);
