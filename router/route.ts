@@ -43,7 +43,6 @@ router.delete('/customer/:id', (req, res) => {
 });
 router.post('/customer/signup', (req, res) => {
     const pass = bcryptjs.hashSync(req.body.password, 10);
-    console.log(pass);
     const customer = {
         id: customers.length + 1,
         name: req.body.name,
